@@ -93,6 +93,7 @@ import {
 } from '@ant-design/icons'
 import { useNavigate } from 'react-router-dom'
 import { useUserStore } from '../store'
+import { getImagePath, IMAGES } from '../utils/assets'
 
 
 const { TabPane } = Tabs
@@ -490,7 +491,7 @@ const AIDesign: React.FC = () => {
                       'pattern': 'wenyang'
                     }
                     const folder = folderMap[selectedComponent]
-                    const imagePath = `/photo/${folder}/${imageName}`
+                    const imagePath = getImagePath(imageName, folder)
                     return (
                       <div
                         key={index}
@@ -571,7 +572,7 @@ const AIDesign: React.FC = () => {
               overflowY: 'auto'
             }}>
               {fabricThumbnails.map((fabricName, index) => {
-                const imagePath = `/photo/mianliao/${fabricName}`
+                const imagePath = getImagePath(fabricName, 'mianliao')
                 return (
                   <div
                     key={index}
@@ -1733,12 +1734,12 @@ const AIDesign: React.FC = () => {
                 gap: '16px'
               }}>
                 {[
-                  { id: 'product1', name: '经典学位服', image: '/photo/xueweifu/02_default.jpg', price: '¥299', category: 'xueshifu' },
-                  { id: 'product2', name: '高级学位服', image: '/photo/xueweifu/00_02_00__23175691__2321569e_04_00.jpg', price: '¥399', category: 'xueshifu' },
-                  { id: 'product3', name: '豪华学位服', image: '/photo/xueweifu/00_02_00__23408a61__2321569e_04_00.jpg', price: '¥499', category: 'xueshifu' },
-                  { id: 'product4', name: '定制学位服', image: '/photo/xueweifu/00_02_00__23433565__2321569e_04_00.jpg', price: '¥599', category: 'shuoshifu' },
-                  { id: 'product5', name: '特别版学位服', image: '/photo/xueweifu/00_02_00__2363b9d3__2321569e_04_00.jpg', price: '¥699', category: 'shuoshifu' },
-                  { id: 'product6', name: '限量版学位服', image: '/photo/xueweifu/00_02_00__237a848f__2321569e_04_00.jpg', price: '¥799', category: 'boshifu' }
+                  { id: 'product1', name: '经典学位服', image: IMAGES.xueweifu.default, price: '¥299', category: 'xueshifu' },
+    { id: 'product2', name: '高级学位服', image: IMAGES.xueweifu.flat1, price: '¥399', category: 'xueshifu' },
+    { id: 'product3', name: '豪华学位服', image: IMAGES.xueweifu.flat2, price: '¥499', category: 'xueshifu' },
+    { id: 'product4', name: '定制学位服', image: IMAGES.xueweifu.flat3, price: '¥599', category: 'shuoshifu' },
+    { id: 'product5', name: '特别版学位服', image: IMAGES.xueweifu.model1, price: '¥699', category: 'shuoshifu' },
+    { id: 'product6', name: '限量版学位服', image: IMAGES.xueweifu.model2, price: '¥799', category: 'boshifu' }
                 ].filter(product => selectedCategory === 'all' || product.category === selectedCategory).map((product) => (
                   <div
                     key={product.id}

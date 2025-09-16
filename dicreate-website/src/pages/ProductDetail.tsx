@@ -22,6 +22,7 @@ import {
   ShoppingCartOutlined,
   ArrowLeftOutlined
 } from '@ant-design/icons'
+import { IMAGES } from '../utils/assets'
 import { useCartStore } from '../store/cartStore'
 import type { CartItem } from '../store/cartStore'
 import Breadcrumb from '../components/Breadcrumb'
@@ -68,13 +69,13 @@ const ProductDetail: React.FC = () => {
     name: '经典学士袍 - 理学学士',
     description: '采用优质面料制作，符合学位服标准规范，适合理学学士学位授予仪式使用。',
     images: [
-      '/photo/xueweifu/00_02_00__23175691__2321569e_04_00.jpg',
-      '/photo/xueweifu/00_02_00__23408a61__2321569e_04_00.jpg',
-      '/photo/xueweifu/00_02_00__23433565__2321569e_04_00.jpg',
-      '/photo/xueweifu/00_02_00__2363b9d3__2321569e_04_00.jpg',
-      '/photo/xueweifu/00_02_00__237a848f__2321569e_04_00.jpg'
+      IMAGES.xueweifu.flat1,
+      IMAGES.xueweifu.flat2,
+      IMAGES.xueweifu.flat3,
+      IMAGES.xueweifu.model1,
+      IMAGES.xueweifu.model2
     ],
-    thumbnail: '/photo/xueweifu/00_02_00__23175691__2321569e_04_00.jpg',
+    thumbnail: IMAGES.xueweifu.flat1,
     price: 299.00,
     originalPrice: 399.00,
     category: '学位服',

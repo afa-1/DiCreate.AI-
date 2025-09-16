@@ -3,6 +3,7 @@ import { Modal, Button, Tabs, Radio, Checkbox, Row, Col, Card, Image, Space, Typ
 import { CloseOutlined, ArrowLeftOutlined } from '@ant-design/icons';
 import type { TabsProps } from 'antd';
 import '../styles/ProductPublish.css';
+import { getImagePath, IMAGES } from '../utils/assets';
 
 const { Title, Text } = Typography;
 
@@ -21,14 +22,14 @@ interface MockupItem {
 
 // 模拟样图数据
 const mockupData: MockupItem[] = [
-  { id: '1', name: '平铺展示1', image: '/photo/xueweifu/00_02_00__23175691__2321569e_04_00.jpg', type: 'flat' },
-  { id: '2', name: '平铺展示2', image: '/photo/xueweifu/00_02_00__23408a61__2321569e_04_00.jpg', type: 'flat' },
-  { id: '3', name: '平铺展示3', image: '/photo/xueweifu/00_02_00__23433565__2321569e_04_00.jpg', type: 'flat' },
-  { id: '4', name: '模特穿着1', image: '/photo/xueweifu/00_02_00__2363b9d3__2321569e_04_00.jpg', type: 'model' },
-  { id: '5', name: '模特穿着2', image: '/photo/xueweifu/00_02_00__237a848f__2321569e_04_00.jpg', type: 'model' },
-  { id: '6', name: '悬挂展示1', image: '/photo/xueweifu/00_02_00__23c4af57__2321569e_04_00.jpg', type: 'hanging' },
-  { id: '7', name: '悬挂展示2', image: '/photo/xueweifu/00_02_00__23da898d__2321569e_04_00.jpg', type: 'hanging' },
-  { id: '8', name: '细节特写', image: '/photo/xueweifu/00_02_00__23fffefe__2321569e_04_00.jpg', type: 'detail' },
+  { id: '1', name: '平铺展示1', image: IMAGES.xueweifu.flat1, type: 'flat' },
+  { id: '2', name: '平铺展示2', image: IMAGES.xueweifu.flat2, type: 'flat' },
+  { id: '3', name: '平铺展示3', image: IMAGES.xueweifu.flat3, type: 'flat' },
+  { id: '4', name: '模特穿着1', image: IMAGES.xueweifu.model1, type: 'model' },
+  { id: '5', name: '模特穿着2', image: IMAGES.xueweifu.model2, type: 'model' },
+  { id: '6', name: '悬挂展示1', image: IMAGES.xueweifu.hanging1, type: 'hanging' },
+  { id: '7', name: '悬挂展示2', image: IMAGES.xueweifu.hanging2, type: 'hanging' },
+  { id: '8', name: '细节特写', image: IMAGES.xueweifu.detail, type: 'detail' },
 ];
 
 const ProductPublish: React.FC<ProductPublishProps> = ({ visible, onClose, designImage }) => {

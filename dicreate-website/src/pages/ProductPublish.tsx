@@ -4,6 +4,7 @@ import { ArrowLeftOutlined, StarOutlined, StarFilled, PlayCircleOutlined, Settin
 import { useNavigate } from 'react-router-dom';
 import type { TabsProps } from 'antd';
 import '../styles/ProductPublish.css';
+import { IMAGES } from '../utils/assets';
 
 const { Title, Text } = Typography;
 const { TextArea } = Input;
@@ -25,14 +26,14 @@ interface ModelItem {
 
 // 模拟样图数据
 const mockupData: MockupItem[] = [
-  { id: '1', name: '平铺展示1', image: '/photo/xueweifu/00_02_00__23175691__2321569e_04_00.jpg', type: 'flat' },
-  { id: '2', name: '平铺展示2', image: '/photo/xueweifu/00_02_00__23408a61__2321569e_04_00.jpg', type: 'flat' },
-  { id: '3', name: '平铺展示3', image: '/photo/xueweifu/00_02_00__23433565__2321569e_04_00.jpg', type: 'flat' },
-  { id: '4', name: '模特穿着1', image: '/photo/xueweifu/00_02_00__2363b9d3__2321569e_04_00.jpg', type: 'model' },
-  { id: '5', name: '模特穿着2', image: '/photo/xueweifu/00_02_00__237a848f__2321569e_04_00.jpg', type: 'model' },
-  { id: '6', name: '悬挂展示1', image: '/photo/xueweifu/00_02_00__23c4af57__2321569e_04_00.jpg', type: 'hanging' },
-  { id: '7', name: '悬挂展示2', image: '/photo/xueweifu/00_02_00__23da898d__2321569e_04_00.jpg', type: 'hanging' },
-  { id: '8', name: '细节特写', image: '/photo/xueweifu/00_02_00__23fffefe__2321569e_04_00.jpg', type: 'detail' },
+  { id: '1', name: '平铺展示1', image: IMAGES.xueweifu.flat1, type: 'flat' },
+  { id: '2', name: '平铺展示2', image: IMAGES.xueweifu.flat2, type: 'flat' },
+  { id: '3', name: '平铺展示3', image: IMAGES.xueweifu.flat3, type: 'flat' },
+  { id: '4', name: '模特穿着1', image: IMAGES.xueweifu.model1, type: 'model' },
+  { id: '5', name: '模特穿着2', image: IMAGES.xueweifu.model2, type: 'model' },
+  { id: '6', name: '悬挂展示1', image: IMAGES.xueweifu.hanging1, type: 'hanging' },
+  { id: '7', name: '悬挂展示2', image: IMAGES.xueweifu.hanging2, type: 'hanging' },
+  { id: '8', name: '细节特写', image: IMAGES.xueweifu.detail, type: 'detail' },
 ];
 
 // 模特数据
@@ -47,10 +48,10 @@ const modelImages = [
 
 // 模拟模特数据
 const modelData: ModelItem[] = [
-  { id: '1', name: '商务男模', image: '/photo/xueweifu/00_02_00__23175691__2321569e_04_00.jpg', gender: 'male', style: '商务' },
-  { id: '2', name: '时尚女模', image: '/photo/xueweifu/00_02_00__23408a61__2321569e_04_00.jpg', gender: 'female', style: '时尚' },
-  { id: '3', name: '学院男模', image: '/photo/xueweifu/00_02_00__23433565__2321569e_04_00.jpg', gender: 'male', style: '学院' },
-  { id: '4', name: '优雅女模', image: '/photo/xueweifu/00_02_00__2363b9d3__2321569e_04_00.jpg', gender: 'female', style: '优雅' },
+  { id: '1', name: '商务男模', image: IMAGES.xueweifu.flat1, gender: 'male', style: '商务' },
+  { id: '2', name: '时尚女模', image: IMAGES.xueweifu.flat2, gender: 'female', style: '时尚' },
+  { id: '3', name: '学院男模', image: IMAGES.xueweifu.flat3, gender: 'male', style: '学院' },
+  { id: '4', name: '优雅女模', image: IMAGES.xueweifu.model1, gender: 'female', style: '优雅' },
 ];
 
 const ProductPublish: React.FC = () => {
@@ -570,7 +571,7 @@ const ProductPublish: React.FC = () => {
                           opacity: 0.8
                         }}>
                           <Image
-                            src="/photo/xueweifu/02_default.jpg"
+                            src={IMAGES.xueweifu.default}
                             alt="设计图案"
                             style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                             preview={false}
