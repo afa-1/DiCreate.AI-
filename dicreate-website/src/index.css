@@ -1,0 +1,337 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 现代时尚品牌风格主题色 - 参考美特斯邦威、波司登设计 */
+:root {
+  /* 主色调 - 现代黑白灰 + 品牌蓝 */
+  --primary-color: #000000;        /* 纯黑 - 主要文字、导航 */
+  --primary-hover: #333333;        /* 深灰 - 悬停状态 */
+  --primary-active: #666666;       /* 中灰 - 激活状态 */
+  --primary-light: #f5f5f5;        /* 浅灰 - 背景色 */
+  
+  /* 品牌色 - 现代蓝 */
+  --brand-color: #1890ff;          /* 品牌蓝 - CTA按钮、链接 */
+  --brand-hover: #40a9ff;          /* 品牌蓝悬停 */
+  --brand-active: #096dd9;         /* 品牌蓝激活 */
+  --brand-light: #e6f7ff;          /* 品牌蓝浅色 */
+  
+  /* 辅助色 */
+  --secondary-color: #8c8c8c;      /* 中性灰 - 辅助文字 */
+  --accent-color: #ff4d4f;         /* 强调红 - 促销、特价 */
+  --accent-hover: #ff7875;         /* 强调红悬停 */
+  
+  /* 状态色 */
+  --success-color: #52c41a;        /* 成功绿 */
+  --warning-color: #faad14;        /* 警告橙 */
+  --error-color: #ff4d4f;          /* 错误红 */
+  --info-color: #1890ff;           /* 信息蓝 */
+  
+  /* 背景色系 - 简洁现代 */
+  --bg-primary: #ffffff;           /* 纯白背景 */
+  --bg-secondary: #fafafa;         /* 浅灰背景 */
+  --bg-tertiary: #f5f5f5;          /* 更浅灰背景 */
+  --bg-card: #ffffff;              /* 卡片背景 */
+  --bg-hover: #f5f5f5;             /* 悬停背景 */
+  
+  /* 文字色系 - 清晰层次 */
+  --text-primary: #000000;         /* 主要文字 - 纯黑 */
+  --text-secondary: #666666;       /* 次要文字 - 中灰 */
+  --text-tertiary: #999999;        /* 辅助文字 - 浅灰 */
+  --text-muted: #bfbfbf;           /* 弱化文字 - 更浅灰 */
+  --text-white: #ffffff;           /* 白色文字 */
+  
+  /* 边框色 */
+  --border-color: #d9d9d9;         /* 标准边框 */
+  --border-light: #f0f0f0;         /* 浅边框 */
+  --border-dark: #bfbfbf;          /* 深边框 */
+  
+  /* 阴影 - 轻量现代 */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+  
+  /* 渐变 - 简约现代 */
+  --gradient-primary: linear-gradient(135deg, #000000 0%, #333333 100%);
+  --gradient-brand: linear-gradient(135deg, #1890ff 0%, #40a9ff 100%);
+  --gradient-accent: linear-gradient(135deg, #ff4d4f 0%, #ff7875 100%);
+}
+
+/* 重置样式 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* 专业工业设计组件样式 */
+.industrial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.industrial-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--primary-color);
+}
+
+/* 玻璃态效果 */
+.glass-card {
+  background: rgba(45, 55, 72, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: var(--shadow-xl);
+}
+
+/* 渐变按钮 */
+.gradient-button {
+  background: var(--gradient-primary);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.gradient-button:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+  filter: brightness(1.1);
+}
+
+/* 专业导航栏 */
+.professional-nav {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(20px);
+}
+
+/* 侧边栏样式 */
+.professional-sidebar {
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border-color);
+}
+
+/* 内容区域 */
+.content-area {
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+/* 工具栏 */
+.toolbar {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+/* 状态指示器 */
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.status-online { background: var(--success-color); }
+.status-warning { background: var(--warning-color); }
+.status-error { background: var(--error-color); }
+.status-info { background: var(--info-color); }
+
+/* 3D视图容器 - 专业版 */
+.three-viewer {
+  width: 100%;
+  height: 100%;
+  min-height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.three-viewer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 49%, rgba(0, 102, 255, 0.1) 50%, transparent 51%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 3D控制面板 */
+.three-controls {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(45, 55, 72, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 8px;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+/* 专业面料卡片 */
+.fabric-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.fabric-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.fabric-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-color);
+}
+
+.fabric-card:hover::before {
+  opacity: 0.1;
+}
+
+/* 数据可视化图表容器 */
+.chart-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+}
+
+/* 专业表格样式 */
+.professional-table {
+  background: var(--bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.professional-table .ant-table {
+  background: transparent;
+}
+
+.professional-table .ant-table-thead > tr > th {
+  background: var(--bg-tertiary);
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.professional-table .ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.professional-table .ant-table-tbody > tr:hover > td {
+  background: var(--bg-hover);
+}
+
+/* 加载动画 */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 脉冲动画 */
+.pulse-animation {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .three-viewer {
+    min-height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .three-viewer {
+    min-height: 300px;
+  }
+  
+  .three-controls {
+    top: 8px;
+    right: 8px;
+    padding: 8px;
+  }
+  
+  .industrial-card {
+    margin-bottom: 16px;
+  }
+  
+  .chart-container {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fabric-card:hover {
+    transform: none;
+  }
+  
+  .industrial-card:hover {
+    transform: none;
+  }
+}

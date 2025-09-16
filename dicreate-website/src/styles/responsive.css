@@ -1,0 +1,417 @@
+/* 响应式全局样式 */
+
+/* 基础响应式容器 */
+.responsive-container {
+  width: 100%;
+  padding: 0 16px;
+}
+
+@media (max-width: 768px) {
+  .responsive-container {
+    padding: 0 12px;
+  }
+}
+
+/* 响应式网格系统 */
+.responsive-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .responsive-grid {
+    gap: 12px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .responsive-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+/* 响应式卡片 */
+.responsive-card {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  background: #fff;
+  border: 1px solid #f0f0f0;
+  transition: all 0.2s ease;
+}
+
+.responsive-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: #d9d9d9;
+}
+
+@media (max-width: 768px) {
+  .responsive-card {
+    padding: 16px;
+    border-radius: 6px;
+  }
+}
+
+/* 响应式文字大小 */
+.responsive-title {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+@media (max-width: 768px) {
+  .responsive-title {
+    font-size: 22px;
+    letter-spacing: -0.3px;
+  }
+}
+
+.responsive-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #000000;
+  letter-spacing: -0.3px;
+}
+
+@media (max-width: 768px) {
+  .responsive-subtitle {
+    font-size: 18px;
+    letter-spacing: -0.2px;
+  }
+}
+
+.responsive-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666666;
+}
+
+@media (max-width: 768px) {
+  .responsive-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+.responsive-small-text {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #999999;
+}
+
+@media (max-width: 768px) {
+  .responsive-small-text {
+    font-size: 12px;
+  }
+}
+
+/* 响应式间距 */
+.responsive-margin {
+  margin: 24px 0;
+}
+
+@media (max-width: 768px) {
+  .responsive-margin {
+    margin: 16px 0;
+  }
+}
+
+.responsive-padding {
+  padding: 24px;
+}
+
+@media (max-width: 768px) {
+  .responsive-padding {
+    padding: 16px;
+  }
+}
+
+/* 响应式按钮 */
+.responsive-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .responsive-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+/* 响应式表格 */
+.responsive-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.responsive-table table {
+  min-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .responsive-table table {
+    min-width: 500px;
+  }
+}
+
+/* 响应式图片 */
+.responsive-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 响应式视频 */
+.responsive-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-video iframe,
+.responsive-video video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+/* 响应式导航 */
+.responsive-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+@media (max-width: 768px) {
+  .responsive-nav {
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 0;
+  }
+}
+
+/* 响应式侧边栏 */
+.responsive-sidebar {
+  width: 280px;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .responsive-sidebar {
+    width: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .responsive-sidebar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    z-index: 1000;
+    transition: left 0.3s ease;
+  }
+  
+  .responsive-sidebar.open {
+    left: 0;
+  }
+}
+
+/* 响应式模态框 */
+.responsive-modal {
+  width: 90%;
+}
+
+@media (max-width: 768px) {
+  .responsive-modal {
+    width: 95%;
+    max-width: none;
+    margin: 20px;
+  }
+}
+
+/* 响应式表单 */
+.responsive-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.responsive-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .responsive-form-row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* 响应式工具类 */
+.hide-mobile {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none !important;
+  }
+}
+
+.show-mobile {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .show-mobile {
+    display: block !important;
+  }
+}
+
+.hide-tablet {
+  display: block;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hide-tablet {
+    display: none !important;
+  }
+}
+
+.show-tablet {
+  display: none;
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .show-tablet {
+    display: block !important;
+  }
+}
+
+.hide-desktop {
+  display: block;
+}
+
+@media (min-width: 1025px) {
+  .hide-desktop {
+    display: none !important;
+  }
+}
+
+.show-desktop {
+  display: none;
+}
+
+@media (min-width: 1025px) {
+  .show-desktop {
+    display: block !important;
+  }
+}
+
+/* 响应式文本对齐 */
+.text-center-mobile {
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .text-center-mobile {
+    text-align: center;
+  }
+}
+
+/* 响应式Flex布局 */
+.responsive-flex {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
+
+.responsive-flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .responsive-flex-wrap {
+    gap: 12px;
+  }
+}
+
+/* 响应式滚动 */
+.responsive-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.responsive-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+
+.responsive-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.responsive-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.responsive-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+/* 响应式动画 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* 响应式打印样式 */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  .responsive-container {
+    max-width: none;
+    padding: 0;
+  }
+  
+  .responsive-card {
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

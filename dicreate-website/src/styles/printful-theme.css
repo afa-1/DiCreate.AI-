@@ -1,0 +1,618 @@
+/* Printful风格主题样式 */
+
+:root {
+  /* 现代时尚品牌配色方案 - 统一风格 */
+  /* 主色调：现代黑白灰 */
+  --primary-blue: #1890ff;        /* 品牌蓝 - 主要CTA按钮、导航选中态 */
+  --primary-blue-dark: #096dd9;   /* 深品牌蓝 - 标题强调、图标 */
+  --primary-blue-light: #e6f7ff;  /* 浅品牌蓝 - 悬停状态、背景强调 */
+  
+  /* 背景色系 */
+  --bg-primary: #ffffff;          /* 纯白 - 卡片背景、文本区域 */
+  --bg-secondary: #fafafa;        /* 浅灰色 - 页面背景、模块分隔 */
+  --bg-tertiary: #f5f5f5;         /* 极浅灰 - 表格斑马纹、输入框背景 */
+  
+  /* 功能色：精准区分场景 */
+  --success-color: #52c41a;       /* 成功绿 - 成功提示、已发货状态 */
+  --warning-color: #faad14;       /* 警告橙 - 警告提示、库存不足 */
+  --error-color: #ff4d4f;         /* 错误红 - 错误提示、验证失败 */
+  
+  /* 文字色：层级清晰 */
+  --text-primary: #000000;        /* 纯黑 - 一级文字（标题、核心信息）*/
+  --text-secondary: #666666;      /* 中灰色 - 二级文字（描述、辅助信息）*/
+  --text-tertiary: #999999;       /* 浅灰色 - 三级文字（备注、链接）*/
+  --text-white: #ffffff;          /* 白色文字 - 用于深色背景 */
+  
+  /* 边框色 */
+  --border-light: #f0f0f0;        /* 浅边框 - 卡片边框、分隔线 */
+  --border-medium: #d9d9d9;       /* 中等边框 - 输入框、按钮边框 */
+  --border-dark: #bfbfbf;         /* 深边框 - 强调边框 */
+  
+  /* 字体 */
+  --printful-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --printful-font-size-xs: 12px;
+  --printful-font-size-sm: 14px;
+  --printful-font-size-base: 16px;
+  --printful-font-size-lg: 18px;
+  --printful-font-size-xl: 20px;
+  --printful-font-size-xxl: 24px;
+  
+  /* 间距 */
+  --printful-spacing-xs: 4px;
+  --printful-spacing-sm: 8px;
+  --printful-spacing-md: 16px;
+  --printful-spacing-lg: 24px;
+  --printful-spacing-xl: 32px;
+  --printful-spacing-xxl: 48px;
+  
+  /* 圆角 */
+  --printful-border-radius-sm: 4px;
+  --printful-border-radius-md: 8px;
+  --printful-border-radius-lg: 12px;
+  
+  /* 阴影 */
+  --printful-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --printful-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --printful-shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 全局样式重置 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--printful-font-family);
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* 专业电商平台风格的顶部导航 */
+.printful-header {
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.printful-header-content {
+  width: 100%;
+  padding: 0 var(--printful-spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.printful-logo {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.printful-logo:hover {
+  color: var(--primary-blue);
+}
+
+.printful-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.printful-nav-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 8px 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.printful-nav-item:hover {
+  color: var(--text-primary);
+}
+
+.printful-nav-item.active {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.printful-nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary-blue);
+  border-radius: 1px;
+}
+
+.printful-user-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.printful-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: var(--printful-font-size-sm);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--printful-spacing-xs);
+}
+
+.printful-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-hover);
+}
+
+.printful-btn-primary {
+  background: var(--primary-blue);
+  color: var(--text-white);
+  border: none;
+}
+
+.printful-btn-primary:hover {
+  background: var(--primary-blue-dark);
+  color: var(--text-white);
+}
+
+/* 主内容区域 */
+.printful-main {
+  min-height: calc(100vh - 64px);
+  background: var(--bg-secondary);
+}
+
+.printful-container {
+  width: 100%;
+  padding: var(--printful-spacing-lg);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .printful-header-content {
+    padding: 0 var(--printful-spacing-md);
+    height: 56px;
+  }
+  
+  .printful-logo {
+    font-size: var(--printful-font-size-lg);
+  }
+  
+  .printful-nav {
+    display: none !important;
+  }
+  
+  .printful-user-actions {
+    gap: var(--printful-spacing-sm);
+  }
+  
+  .printful-container {
+    padding: var(--printful-spacing-md);
+  }
+  
+  .printful-main {
+    min-height: calc(100vh - 56px);
+  }
+  
+  /* 移动端按钮优化 */
+  .printful-btn {
+    padding: var(--printful-spacing-xs) var(--printful-spacing-sm);
+    min-width: 40px;
+    height: 40px;
+  }
+  
+  /* 移动端抽屉菜单优化 */
+  .ant-drawer-body {
+    padding: 0 !important;
+  }
+  
+  .ant-drawer-header {
+    display: none !important;
+  }
+}
+
+/* 平板端适配 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .printful-header-content {
+    padding: 0 var(--printful-spacing-lg);
+  }
+  
+  .printful-nav {
+    gap: var(--printful-spacing-lg);
+  }
+  
+  .printful-container {
+    padding: var(--printful-spacing-lg);
+  }
+}
+
+/* 超小屏幕适配 */
+@media (max-width: 480px) {
+  .printful-header-content {
+    padding: 0 var(--printful-spacing-sm);
+    height: 52px;
+  }
+  
+  .printful-logo {
+    font-size: var(--printful-font-size-base);
+  }
+  
+  .printful-user-actions {
+    gap: var(--printful-spacing-xs);
+  }
+  
+  .printful-container {
+    padding: var(--printful-spacing-sm);
+  }
+  
+  .printful-main {
+    min-height: calc(100vh - 52px);
+  }
+  
+  .printful-btn {
+    padding: var(--printful-spacing-xs);
+    min-width: 36px;
+    height: 36px;
+    font-size: var(--printful-font-size-sm);
+  }
+}
+
+/* Ant Design组件样式覆盖 */
+.ant-layout {
+  background: var(--bg-secondary) !important;
+}
+
+.ant-layout-header {
+  background: var(--bg-primary) !important;
+  padding: 0 !important;
+  height: auto !important;
+  line-height: normal !important;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+  background: transparent !important;
+}
+
+.ant-menu-item {
+  color: var(--text-secondary) !important;
+  font-weight: 500 !important;
+}
+
+.ant-menu-item:hover {
+  color: var(--primary-blue) !important;
+  background-color: var(--primary-blue-light) !important;
+}
+
+.ant-menu-item-selected {
+  color: var(--primary-blue) !important;
+  font-weight: 600 !important;
+}
+
+.ant-menu-item-selected::after {
+  border-bottom-color: var(--primary-blue) !important;
+}
+
+.ant-btn-primary {
+  background: var(--primary-blue) !important;
+  border-color: var(--primary-blue) !important;
+}
+
+.ant-btn-primary:hover {
+  background: var(--primary-blue-dark) !important;
+  border-color: var(--primary-blue-dark) !important;
+}
+
+/* 卡片组件 */
+.ant-card {
+  background: var(--bg-primary) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+  transition: all 0.2s ease !important;
+}
+
+.ant-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  border-color: var(--border-medium) !important;
+}
+
+.ant-card-head {
+  background: var(--bg-primary) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  padding: 16px 20px !important;
+}
+
+.ant-card-head-title {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+  font-size: 16px !important;
+}
+
+.ant-card-body {
+  padding: 20px !important;
+}
+
+/* 表单组件 */
+.ant-form-item-label > label {
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+.ant-input, .ant-input-number, .ant-select-selector {
+  border: 1px solid var(--border-light) !important;
+  background: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  border-radius: 6px !important;
+  padding: 8px 12px !important;
+  transition: all 0.2s ease !important;
+}
+
+.ant-input:hover, .ant-input-number:hover, .ant-select-selector:hover {
+  border-color: var(--border-medium) !important;
+}
+
+.ant-input:focus, .ant-input-number:focus, .ant-select-focused .ant-select-selector {
+  border-color: var(--primary-blue) !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1) !important;
+  outline: none !important;
+}
+
+/* 表格组件 */
+.ant-table {
+  background: var(--bg-primary) !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.ant-table-thead > tr > th {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  padding: 12px 16px !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid var(--border-light) !important;
+  color: var(--text-secondary) !important;
+  padding: 12px 16px !important;
+  font-size: 14px !important;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: var(--bg-tertiary) !important;
+}
+
+.ant-table-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+/* 标签组件 */
+.ant-tag {
+  border-radius: var(--printful-border-radius-sm) !important;
+}
+
+.ant-tag-success {
+  background: var(--success-green-light) !important;
+  border-color: var(--success-green) !important;
+  color: var(--success-green-dark) !important;
+}
+
+.ant-tag-warning {
+  background: var(--warning-yellow-light) !important;
+  border-color: var(--warning-yellow) !important;
+  color: var(--warning-yellow-dark) !important;
+}
+
+.ant-tag-error {
+  background: var(--error-red-light) !important;
+  border-color: var(--error-red) !important;
+  color: var(--error-red-dark) !important;
+}
+
+/* 功能色按钮样式 */
+.ant-btn-success, .printful-btn-success {
+  background: var(--success-green) !important;
+  border-color: var(--success-green) !important;
+  color: var(--text-white) !important;
+}
+
+.ant-btn-success:hover, .printful-btn-success:hover {
+  background: var(--success-green-dark) !important;
+  border-color: var(--success-green-dark) !important;
+  color: var(--text-white) !important;
+}
+
+.ant-btn-warning, .printful-btn-warning {
+  background: var(--warning-yellow) !important;
+  border-color: var(--warning-yellow) !important;
+  color: var(--warning-yellow-dark) !important;
+}
+
+.ant-btn-warning:hover, .printful-btn-warning:hover {
+  background: var(--warning-yellow-dark) !important;
+  border-color: var(--warning-yellow-dark) !important;
+  color: var(--text-white) !important;
+}
+
+.ant-btn-danger, .printful-btn-danger {
+  background: var(--error-red) !important;
+  border-color: var(--error-red) !important;
+  color: var(--text-white) !important;
+}
+
+.ant-btn-danger:hover, .printful-btn-danger:hover {
+  background: var(--error-red-dark) !important;
+  border-color: var(--error-red-dark) !important;
+  color: var(--text-white) !important;
+}
+
+/* 通知组件样式 */
+.ant-notification-notice {
+  border-radius: var(--printful-border-radius-md) !important;
+  box-shadow: var(--printful-shadow-md) !important;
+}
+
+.ant-notification-notice-success {
+  border-left: 4px solid var(--success-green) !important;
+}
+
+.ant-notification-notice-warning {
+  border-left: 4px solid var(--warning-yellow) !important;
+}
+
+.ant-notification-notice-error {
+  border-left: 4px solid var(--error-red) !important;
+}
+
+/* 状态指示器 */
+.status-success {
+  color: var(--success-color) !important;
+  background: rgba(82, 196, 26, 0.1) !important;
+  border: 1px solid var(--success-color) !important;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-warning {
+  color: var(--warning-color) !important;
+  background: rgba(250, 173, 20, 0.1) !important;
+  border: 1px solid var(--warning-color) !important;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-error {
+  color: var(--error-color) !important;
+  background: rgba(255, 77, 79, 0.1) !important;
+  border: 1px solid var(--error-color) !important;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 现代化工具类 */
+.modern-card {
+  background: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.modern-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-color: var(--border-medium);
+}
+
+.modern-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modern-button-primary {
+  background: var(--primary-blue);
+  color: var(--text-white);
+}
+
+.modern-button-primary:hover {
+  background: var(--primary-blue-dark);
+}
+
+.modern-button-secondary {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.modern-button-secondary:hover {
+  background: var(--border-medium);
+  color: var(--text-primary);
+}
+
+.modern-input {
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background: var(--bg-primary);
+}
+
+.modern-input:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+  outline: none;
+}
+
+.modern-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid var(--border-light);
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.2px;
+}
+
+.text-muted {
+  color: var(--text-secondary);
+}
+
+.text-light {
+  color: var(--text-tertiary);
+}
