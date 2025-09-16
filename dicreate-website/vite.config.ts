@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/DiCreate.AI--/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/DiCreate.AI-/' : '/',
   plugins: [
     react(), // 禁用额外babel插件，避免依赖问题（v2规范）
     tsconfigPaths()
