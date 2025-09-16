@@ -1,0 +1,4 @@
+Trigger GitHub Pages deployment - 2025-09-16 06:57:00
+
+This file is created to trigger GitHub Actions workflow for Pages deployment.
+If you see this file, it means the deployment process has been triggered.
