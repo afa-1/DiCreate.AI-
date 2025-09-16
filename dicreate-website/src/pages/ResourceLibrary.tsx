@@ -52,25 +52,18 @@ import {
   CloudOutlined,
   ScanOutlined,
   BgColorsOutlined,
-  CompressOutlined,
-  ExpandOutlined,
-  ReloadOutlined,
   StarOutlined,
-  ShareAltOutlined,
   EditOutlined,
   DeleteOutlined,
   CopyOutlined,
   ExportOutlined,
   ImportOutlined,
   ToolOutlined,
-  ApiOutlined,
-  SafetyOutlined,
   RocketOutlined,
   BulbOutlined
 } from '@ant-design/icons'
-import { cn } from '../lib/utils'
-import FabricCard, { FabricInfo } from '../components/FabricCard'
-import ThreeDViewer, { Model3D } from '../components/3DViewer'
+import { FabricInfo } from '../components/FabricCard'
+import { Model3D } from '../components/3DViewer'
 import { ContentLoading, CardSkeleton } from '../components/LoadingSpinner'
 import Breadcrumb from '../components/Breadcrumb'
 
@@ -278,12 +271,9 @@ const ResourceLibrary: React.FC = () => {
   const [fabrics, setFabrics] = useState<ExtendedFabricInfo[]>([])
   const [patterns, setPatterns] = useState<PatternInfo[]>([])
   const [materials, setMaterials] = useState<MaterialLibrary[]>([])
-  const [cases, setCases] = useState<CaseInfo[]>([])
-  const [models, setModels] = useState<ModelInfo[]>([])
   
   // 筛选状态
   const [filters, setFilters] = useState<FilterOptions>({})
-  const [selectedItems, setSelectedItems] = useState<string[]>([])
   const [previewItem, setPreviewItem] = useState<any>(null)
   const [form] = Form.useForm()
 
@@ -480,11 +470,9 @@ const ResourceLibrary: React.FC = () => {
           setTotal(mockMaterials.length)
           break
         case 'cases':
-          setCases([])
           setTotal(0)
           break
         case 'models':
-          setModels([])
           setTotal(0)
           break
       }

@@ -7,7 +7,6 @@ import {
   Tag,
   Space,
   Tabs,
-  Timeline,
   Progress,
   Badge,
   Avatar,
@@ -15,35 +14,24 @@ import {
   Select,
   Input,
   DatePicker,
-  Carousel,
   Image,
-  List,
-  Rate,
-  Divider,
   Typography,
   Empty
 } from 'antd'
 import {
   LineChartOutlined,
   FireOutlined,
-  StarOutlined,
   EyeOutlined,
   HeartOutlined,
   ShareAltOutlined,
-  CalendarOutlined,
-  FilterOutlined,
   SearchOutlined,
-  DownloadOutlined,
   BulbOutlined,
   ThunderboltOutlined,
   CrownOutlined,
   RiseOutlined
 } from '@ant-design/icons'
-import { cn } from '../lib/utils'
 import { ContentLoading, CardSkeleton } from '../components/LoadingSpinner'
 import Breadcrumb from '../components/Breadcrumb'
-
-const { TabPane } = Tabs
 const { Search } = Input
 const { RangePicker } = DatePicker
 const { Title, Paragraph, Text } = Typography
